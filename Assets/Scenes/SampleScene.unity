@@ -113,22 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &177045457
+=======
+--- !u!1 &265229412
+>>>>>>> feature/grid
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 177045459}
   - component: {fileID: 177045458}
   m_Layer: 0
   m_Name: Soldier
+=======
+  - component: {fileID: 265229414}
+  - component: {fileID: 265229413}
+  m_Layer: 0
+  m_Name: Directional Light
+>>>>>>> feature/grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!212 &177045458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,10 +188,51 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &177045459
+=======
+--- !u!108 &265229413
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265229412}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &265229414
+>>>>>>> feature/grid
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 177045457}
   m_LocalRotation: {x: -0, y: -0, z: -0.01201967, w: 0.99992776}
   m_LocalPosition: {x: 3.635, y: -0.46, z: -4}
@@ -338,6 +391,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -130.069}
+=======
+  m_GameObject: {fileID: 265229412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> feature/grid
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +1014,7 @@ Tilemap:
   - first: {x: -8, y: -3, z: 0}
     second:
       m_TileIndex: 10
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1023,7 +1086,11 @@ Tilemap:
   - first: {x: 0, y: -3, z: 0}
     second:
       m_TileIndex: 9
+<<<<<<< HEAD
       m_TileSpriteIndex: 12
+=======
+      m_TileSpriteIndex: 10
+>>>>>>> feature/grid
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -2040,7 +2107,7 @@ Tilemap:
   - first: {x: -7, y: 3, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -2591,9 +2658,15 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 48c9442046de1dc42941a80662cc32c1, type: 2}
   m_TileSpriteArray:
+<<<<<<< HEAD
   - m_RefCount: 1
     m_Data: {fileID: 21300110, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
   - m_RefCount: 101
+=======
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 105
+>>>>>>> feature/grid
     m_Data: {fileID: 21300020, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300088, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
@@ -2609,6 +2682,7 @@ Tilemap:
     m_Data: {fileID: 21300016, guid: 9ece76b3ca09a1e4eab54ddc7c6cb949, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 21300068, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+<<<<<<< HEAD
   - m_RefCount: 5
     m_Data: {fileID: 21300046, guid: 9ece76b3ca09a1e4eab54ddc7c6cb949, type: 3}
   - m_RefCount: 2
@@ -2617,6 +2691,16 @@ Tilemap:
     m_Data: {fileID: 21300116, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300070, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+=======
+  - m_RefCount: 1
+    m_Data: {fileID: 21300110, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300070, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+  - m_RefCount: 4
+    m_Data: {fileID: 21300116, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300066, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
+>>>>>>> feature/grid
   - m_RefCount: 1
     m_Data: {fileID: 21300124, guid: cc8c7af25ee78e945b8e22a2f2d3b018, type: 3}
   - m_RefCount: 1
@@ -2721,6 +2805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2066110512}
   - component: {fileID: 2066110511}
+  - component: {fileID: 2066110513}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -2753,3 +2838,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066110513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066110510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769c5af5390b1dd46a9d36fe56212470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphere: {fileID: 1143053270821962, guid: fafe714dabfc9d64da44a12183fdf1a6, type: 2}
