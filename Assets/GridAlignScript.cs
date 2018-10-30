@@ -7,28 +7,29 @@ public class GridAlignScript : MonoBehaviour {
     Vector2 topLeft;
     Tile[,] map;
     int[,] tileMap = {
-        { 0, 0, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 2 },
-        { 0, 0, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0, 0, 0, 0, 2 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1 },
+        { 0, 0, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1 },
+        { 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0, 0, 0, 0, 2, 1, 1 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     };
-    float offset = 0.43f;
+    Vector2 offset = new Vector2(0.27f, 0.43f);
 
     public GameObject sphere;
     public enum TileGenre { Valid, Water, Blocked };
+    public Vector2 gridSize = new Vector2();
 
     private void Start()
     {
         topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
 
-        map = GenerateGrid(18, 10);
-        print(GetTile(4, 0)._genre);
+        map = GenerateGrid((int)gridSize.x, (int)gridSize.y);
     }
 
     public Tile[,] GenerateGrid(int cols, int rows)
@@ -37,7 +38,7 @@ public class GridAlignScript : MonoBehaviour {
         for(int x = 0; x < cols; x++) {
             for(int y = 0; y < rows; y++) {
                 GameObject obj = Instantiate(sphere, transform);
-                obj.transform.position = new Vector2((topLeft.x + x) + offset, (topLeft.y - y) - offset);
+                obj.transform.position = new Vector2((topLeft.x + x) + offset.x, (topLeft.y - y) - offset.y);
                 TileGenre genre;
                 switch (tileMap[y, x]) {
                     case 0: genre = TileGenre.Valid; break;
