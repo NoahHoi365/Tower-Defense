@@ -25,7 +25,7 @@ public class GridAlignScript : MonoBehaviour {
     public enum TileGenre { Valid, Water, Blocked };
     public Vector2 gridSize = new Vector2();
 
-    private void Start()
+    private void Awake()
     {
         topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
 
@@ -61,6 +61,14 @@ public class GridAlignScript : MonoBehaviour {
         }
 
         return map[row, col];
+    }
+
+    public Tile[,] GetMap()
+    {
+        if(map != null)
+            return map;
+
+        return null;
     }
 }
 
