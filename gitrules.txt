@@ -3,7 +3,7 @@ git add . (files)
 
 git commit -m "Your message"
 
-git push (branch)
+git push -u origin (branch)
 
 Nieuwe branch maken:
 git branch (name)
