@@ -6,26 +6,26 @@ public class GridAlignScript : MonoBehaviour {
     
     Vector2 topLeft;
     Tile[,] map;
-    int[,] tileMap = {
-        { 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1 },
-        { 0, 0, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1 },
-        { 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0, 0, 0, 0, 2, 1, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-        { 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+    byte[,] tileMap = {
+        { 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1 },
+        { 0, 0, 0, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1 },
+        { 0, 0, 0, 2, 2, 2, 2, 0, 3, 3, 3, 3, 3, 0, 0, 0, 2, 1, 1, 1 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 3, 0 ,0 ,0, 3, 0, 0, 0, 0, 2, 1, 1 },
+        { 3, 3, 3, 3, 3, 3, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 2, 1 },
+        { 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2 },
+        { 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 3, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 3, 3, 3, 3, 3, 0, 0, 0 },
+        { 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 3, 0, 0, 0 },
     };
     Vector2 offset = new Vector2(0.27f, 0.43f);
 
     public GameObject sphere;
-    public enum TileGenre { Valid, Water, Blocked };
+    public enum TileGenre { Valid, Water, Blocked, Path };
     public Vector2 gridSize = new Vector2();
 
-    private void Start()
+    private void Awake()
     {
         topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
 
@@ -44,6 +44,7 @@ public class GridAlignScript : MonoBehaviour {
                     case 0: genre = TileGenre.Valid; break;
                     case 1: genre = TileGenre.Water; break;
                     case 2: genre = TileGenre.Blocked; break;
+                    case 3: genre = TileGenre.Path; break;
                     default: genre = TileGenre.Blocked; break;
                 }
 
@@ -61,6 +62,65 @@ public class GridAlignScript : MonoBehaviour {
         }
 
         return map[row, col];
+    }
+
+    public Tile GetTile(Transform transform)
+    {
+        //return TileTransform(transform);
+        for (int i = 0; i < map.GetLength(0); i++) {
+            for (int j = 0; j < map.GetLength(1); j++) {
+                Transform temp = map[i, j]._obj.transform;
+
+                if (temp == transform) {
+                    return map[i, j];
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public void SetTile(Transform transform, TileGenre genre)
+    {
+        //Tile tile = TileTransform(transform);
+
+        for (int i = 0; i < map.GetLength(0); i++) {
+            for (int j = 0; j < map.GetLength(1); j++) {
+                Transform temp = map[i, j]._obj.transform;
+
+                if (temp == transform) {
+                    map[i, j]._genre = genre;
+                }
+            }
+        }
+
+    }
+
+    public void ResetTile(Transform transform)
+    {
+        for (int i = 0; i < map.GetLength(0); i++) {
+            for (int j = 0; j < map.GetLength(1); j++) {
+                Transform temp = map[i, j]._obj.transform;
+
+                if (temp == transform) {
+                    TileGenre genre;
+                    switch (tileMap[j, i]) {
+                        case 0: genre = TileGenre.Valid; break;
+                        case 1: genre = TileGenre.Water; break;
+                        case 2: genre = TileGenre.Blocked; break;
+                        case 3: genre = TileGenre.Path; break;
+                        default: genre = TileGenre.Blocked; break;
+                    }
+                    
+                    map[i, j]._genre = genre;
+                }
+            }
+        }
+    }
+
+    public Tile[,] GetMap()
+    {
+        return map;
     }
 }
 
