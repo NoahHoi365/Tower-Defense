@@ -8,7 +8,9 @@ public class TowerPlace : MonoBehaviour {
 
     bool canBePlaced;
     bool isPlaced = false;
-    ScriptableObject a;
+
+    public delegate void TowerUnattached();
+    public event TowerUnattached towerUnattachedEvent;
 
     void Start()
     {
@@ -18,11 +20,18 @@ public class TowerPlace : MonoBehaviour {
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            canBePlaced = mouseMove;
+            canBePlaced = mouseMove.IsAbleToPlace();
             if (canBePlaced) {
                 isPlaced = true;
                 mouseMove.IsPlaced();
+                if (towerUnattachedEvent != null)
+                    towerUnattachedEvent();
             }
         }
+    }
+
+    public bool IsPlaced()
+    {
+        return isPlaced;
     }
 }

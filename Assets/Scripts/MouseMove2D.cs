@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseMove2D : MonoBehaviour {
@@ -15,9 +14,16 @@ public class MouseMove2D : MonoBehaviour {
 
     bool canBePlaceOnWater = false;
     bool canBePlaced, isPlaced;
+    bool towerAttached;
+
+    public delegate void TowerAttached();
+    public event TowerAttached towerAttachedEvent;
 
     void Start()
     {
+        if (towerAttachedEvent != null)
+            towerAttachedEvent();
+
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         overlay = spriteRenderers[1];
         gridAlignScript = FindObjectOfType<GridAlignScript>();
@@ -33,6 +39,7 @@ public class MouseMove2D : MonoBehaviour {
     }
 
     void Update () {
+        towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
         mousePosition = Input.mousePosition;
 
         if (mousePosition != lastMousePosition && !isPlaced) {
@@ -96,7 +103,10 @@ public class MouseMove2D : MonoBehaviour {
     
     public void UnPlace()
     {
-        isPlaced = false;
-        gridAlignScript.ResetTile(target);
+        if (!towerAttached) {
+            isPlaced = false;
+            gridAlignScript.ResetTile(target);
+            overlay.color = new Color(0, 255, 0, 0.3f);
+        }
     }
 }
