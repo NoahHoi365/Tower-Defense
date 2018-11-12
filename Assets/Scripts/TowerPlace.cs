@@ -34,4 +34,9 @@ public class TowerPlace : MonoBehaviour {
     {
         return isPlaced;
     }
+
+    public void Placed(bool state)
+    {
+        isPlaced = state;
+    }
 }

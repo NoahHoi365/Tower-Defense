@@ -64,6 +64,7 @@ public class ClickingObjects : MonoBehaviour
                 //Pick up button
                 if (GUI.Button(new Rect(new Vector2(point.x - btnOffset.x + 120, point.y + btnOffset.y), homeBtnSize), "", replaceStyle)) {
                     selectedGameObject.GetComponent<MouseMove2D>().UnPlace();
+                    selectedGameObject.GetComponent<TowerPlace>().Placed(false);
                     selectedGameObject = null;
                 }
             }
