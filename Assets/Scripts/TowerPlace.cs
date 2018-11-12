@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class TowerPlace : MonoBehaviour {
 
+    MouseMove2D mouseMove;
+
     bool canBePlaced;
     bool isPlaced = false;
+    ScriptableObject a;
+
+    void Start()
+    {
+        mouseMove = FindObjectOfType<MouseMove2D>();
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            canBePlaced = FindObjectOfType<MouseMove2D>().IsAbleToPlace();
-            if(canBePlaced) {
+            canBePlaced = mouseMove;
+            if (canBePlaced) {
                 isPlaced = true;
-                FindObjectOfType<MouseMove2D>().IsPlaced();
+                mouseMove.IsPlaced();
             }
         }
     }
