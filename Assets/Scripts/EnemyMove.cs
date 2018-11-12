@@ -1,16 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class EnemyMove : MonoBehaviour {
 
     public float speed = 5f;
     public float waitTime = .3f;
     public float turnSpeed = 90f;
-
-    public delegate void ReachedEndOfPath();
-    public event ReachedEndOfPath EndOfPathEvent;
 
     public Transform pathHolder;
 
@@ -45,13 +41,6 @@ public class EnemyMove : MonoBehaviour {
             }
             yield return null;
         }
-
-        print("reached end path");
-        if(EndOfPathEvent != null)
-        {
-            EndOfPathEvent();
-        }
-
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)
