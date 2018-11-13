@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class BoatTower : Tower
 { 
-    void Reset()
+    void Start()
     {
-        this.radius = 3f;
-        this.damage = 10f;
-        this.canPlaceOnWater = true;
+        radius = 3f;
+        damage = 10f;
+        canPlaceOnWater = true;
+        towerCost = 10;
     }
 
     void Update()
     {
-
+        
     }
 
     private void OnDrawGizmos()

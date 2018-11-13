@@ -10,6 +10,7 @@ public class RobotTower : Tower
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
+        towerCost = 10;
     }
 
     void Update()
@@ -21,5 +22,4 @@ public class RobotTower : Tower
     {
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-
 }

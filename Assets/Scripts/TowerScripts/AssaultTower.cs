@@ -10,6 +10,7 @@ public class AssaultTower : Tower
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
+        towerCost = 100;
     }
 
     void Update()

@@ -10,6 +10,7 @@ public class GodTower : Tower
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
+        towerCost = 10;
     }
 
     void Update()

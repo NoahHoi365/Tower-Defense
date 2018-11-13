@@ -26,7 +26,15 @@ public class MenuButtons : MonoBehaviour {
         bool towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
         if (!towerAttached) {
             GameObject temp = Instantiate(obj);
+            temp.SetActive(false);
             temp.transform.parent = null;
+            if (FindObjectOfType<Player>().GetCurrency() > temp.GetComponent<Tower>().GetTowerCost()) {
+                FindObjectOfType<Player>().SubCurrency(temp.GetComponent<Tower>().GetTowerCost());
+                print(temp.GetComponent<Tower>().GetTowerCost());
+                temp.SetActive(true);
+            } else {
+                Destroy(temp);
+            }
         }
     }
 }
