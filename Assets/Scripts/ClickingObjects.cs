@@ -43,10 +43,11 @@ public class ClickingObjects : MonoBehaviour
                 );
 
                 Vector2 pointInCamera = camera.WorldToViewportPoint(pointPosition);
+                print(pointInCamera);
                 bool pointIsVisible = true;
                 Vector2 btnOffset;
 
-                if (pointInCamera.y <= 0) {
+                if (pointInCamera.y <= 0.1f) {
                     pointIsVisible = false;
                     btnOffset = bottomOffset;
                 } else {
