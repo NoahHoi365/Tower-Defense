@@ -273,58 +273,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 640688535}
   m_GameObject: {fileID: 9767837}
   m_CullTransparentMesh: 0
---- !u!1001 &23550205
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4069511339214474, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 65649653667760230, guid: eec2541e7a384bf45a38f8e83269a803,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114096352544902582, guid: eec2541e7a384bf45a38f8e83269a803,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eec2541e7a384bf45a38f8e83269a803, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &265229412
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +416,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 303155680}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: a71bf26b09857a2468d2b66498233e9c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &303155680
@@ -592,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325312174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.13, y: 3.54, z: 0}
+  m_LocalPosition: {x: -8.13, y: 3.54, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1069,7 +1029,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 624358425}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: eec2541e7a384bf45a38f8e83269a803,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &624358425
@@ -1115,6 +1087,41 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224394930000164500, guid: 8298037e08aed3b4ea345b1dd9bf470d,
         type: 2}
       propertyPath: m_RootOrder
@@ -1258,7 +1265,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1472082172780008, guid: 8298037e08aed3b4ea345b1dd9bf470d, type: 2}
       propertyPath: m_Name
-      value: Ship button
+      value: Boat button
       objectReference: {fileID: 0}
     - target: {fileID: 1760254649825012, guid: 8298037e08aed3b4ea345b1dd9bf470d, type: 2}
       propertyPath: m_Name
@@ -1268,6 +1275,233 @@ Prefab:
       propertyPath: m_Name
       value: Menu button
       objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[0].name
+      value: assault
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[1].name
+      value: alien
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[2].name
+      value: boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[3].name
+      value: god
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[4].name
+      value: robot
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[5].name
+      value: sniper
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: eec2541e7a384bf45a38f8e83269a803,
+        type: 2}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: 7eb853eb2e81a4d438a378017dde81ac,
+        type: 2}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: 2d306762c260a1e4a8f61646f093b3f3,
+        type: 2}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: e21e2466f7a3eca48af3671173fc6e9d,
+        type: 2}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: a6f2f1aeba60cd34eb3166f13b1d1f8b,
+        type: 2}
+    - target: {fileID: 114210884081688890, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: towerPrefabs.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: a71bf26b09857a2468d2b66498233e9c,
+        type: 2}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: assault
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386764242730272, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: 7eb853eb2e81a4d438a378017dde81ac,
+        type: 2}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018537453074456, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: a71bf26b09857a2468d2b66498233e9c,
+        type: 2}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114071527852384680, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: a6f2f1aeba60cd34eb3166f13b1d1f8b,
+        type: 2}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114230055510866154, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: eec2541e7a384bf45a38f8e83269a803,
+        type: 2}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704391303943084, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: 2d306762c260a1e4a8f61646f093b3f3,
+        type: 2}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1302482072}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTowerPress
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865672146359892, guid: 8298037e08aed3b4ea345b1dd9bf470d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1987949246681676, guid: e21e2466f7a3eca48af3671173fc6e9d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8298037e08aed3b4ea345b1dd9bf470d, type: 2}
   m_IsPrefabAsset: 0
@@ -1406,7 +1640,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 857441015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5900002, y: -4.48, z: 0}
+  m_LocalPosition: {x: 3.5900002, y: -4.48, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -1434,7 +1668,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1058424393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.63, y: -0.51, z: 0}
+  m_LocalPosition: {x: 6.63, y: -0.51, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -1533,7 +1767,7 @@ RectTransform:
   - {fileID: 1528214185}
   - {fileID: 574400310}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1757,7 +1991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1302504673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: 7eb853eb2e81a4d438a378017dde81ac,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: assault
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1302504673
@@ -1818,7 +2064,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1313977849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.58, y: -7.51, z: 0}
+  m_LocalPosition: {x: 10.58, y: -7.51, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -1846,7 +2092,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357965365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.61, y: -9.7, z: 0}
+  m_LocalPosition: {x: 14.61, y: -9.7, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -1957,7 +2203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1409203857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.43, y: -2.54, z: 0}
+  m_LocalPosition: {x: -2.43, y: -2.54, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -1976,7 +2222,7 @@ GameObject:
   - component: {fileID: 1423926218}
   - component: {fileID: 1423926217}
   m_Layer: 5
-  m_Name: Ship button
+  m_Name: Boat button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2040,7 +2286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1423926218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: 2d306762c260a1e4a8f61646f093b3f3,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1423926218
@@ -4373,7 +4631,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591185164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.59, y: -2.54, z: 0}
+  m_LocalPosition: {x: 3.59, y: -2.54, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -4561,7 +4819,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1760602658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.58, y: -0.51, z: 0}
+  m_LocalPosition: {x: 10.58, y: -0.51, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -4589,7 +4847,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832147325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.61, y: -7.51, z: 0}
+  m_LocalPosition: {x: 14.61, y: -7.51, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -4617,7 +4875,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889935207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.63, y: -4.48, z: 0}
+  m_LocalPosition: {x: 6.63, y: -4.48, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2123039121}
@@ -4700,7 +4958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1933891748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: e21e2466f7a3eca48af3671173fc6e9d,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1933891748
@@ -4816,7 +5086,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2058345181}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1302482072}
+        m_MethodName: OnTowerPress
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1987949246681676, guid: a6f2f1aeba60cd34eb3166f13b1d1f8b,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2058345181

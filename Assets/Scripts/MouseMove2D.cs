@@ -16,13 +16,9 @@ public class MouseMove2D : MonoBehaviour {
     bool canBePlaced, isPlaced;
     bool towerAttached;
 
-    public delegate void TowerAttached();
-    public event TowerAttached towerAttachedEvent;
-
     void Start()
     {
-        if (towerAttachedEvent != null)
-            towerAttachedEvent();
+        FindObjectOfType<GameManagerScript>().TowerAttached();
 
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         overlay = spriteRenderers[1];
@@ -34,13 +30,14 @@ public class MouseMove2D : MonoBehaviour {
                 gridPositions.Add(map[i, j]._obj.transform);
             }
         }
-        
-        canBePlaceOnWater = FindObjectOfType<Tower>().IsAbleToPlaceOnWater();
     }
 
-    void Update () {
+    void Update ()
+    {
         towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
         mousePosition = Input.mousePosition;
+
+        canBePlaceOnWater = FindObjectOfType<Tower>().IsAbleToPlaceOnWater();
 
         if (mousePosition != lastMousePosition && !isPlaced) {
             Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -57,7 +54,10 @@ public class MouseMove2D : MonoBehaviour {
                 }
                 overlay.color = new Color(255, 0, 0, 0.3f);
                 canBePlaced = false;
-            } else if(currentTileGenre == GridAlignScript.TileGenre.Valid) {
+            } else if(currentTileGenre == GridAlignScript.TileGenre.Valid && !canBePlaceOnWater) {
+                overlay.color = new Color(0, 255, 0, 0.3f);
+                canBePlaced = true;
+            } else if(currentTileGenre == GridAlignScript.TileGenre.Water && canBePlaceOnWater) {
                 overlay.color = new Color(0, 255, 0, 0.3f);
                 canBePlaced = true;
             }

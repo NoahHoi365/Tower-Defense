@@ -5,32 +5,28 @@ using UnityEngine;
 public class MenuButtons : MonoBehaviour {
 
     Animator animator;
-
-	// Use this for initialization
+    
 	void Start () {
         animator = GetComponentInParent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
     public void OnButtonPress()
     {
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly out") || animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly out") || animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
             animator.Play("Fly in");
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly in") )
-        {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly in")) {
             animator.Play("Fly out");
         }
-
-        
     }
 
-
+    public void OnTowerPress(GameObject obj)
+    {
+        bool towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
+        if (!towerAttached) {
+            GameObject temp = Instantiate(obj);
+            temp.transform.parent = null;
+        }
+    }
 }

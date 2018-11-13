@@ -6,12 +6,6 @@ public class GameManagerScript : MonoBehaviour {
 
     bool towerAttached = false;
 
-    private void Start()
-    {
-        FindObjectOfType<MouseMove2D>().towerAttachedEvent += TowerAttached;
-        FindObjectOfType<TowerPlace>().towerUnattachedEvent += TowerUnattached;
-    }
-
     public void TowerAttached()
     {
         towerAttached = true;

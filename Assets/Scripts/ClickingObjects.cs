@@ -19,7 +19,7 @@ public class ClickingObjects : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && selectedGameObject == null) {
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
                 if(hit.transform.GetComponent<Tower>() && hit.transform.GetComponent<TowerPlace>().IsPlaced()) {
@@ -43,7 +43,6 @@ public class ClickingObjects : MonoBehaviour
                 );
 
                 Vector2 pointInCamera = camera.WorldToViewportPoint(pointPosition);
-                print(pointInCamera);
                 bool pointIsVisible = true;
                 Vector2 btnOffset;
 
@@ -59,7 +58,10 @@ public class ClickingObjects : MonoBehaviour
 
                 //Delete button
                 if (GUI.Button(new Rect(new Vector2(point.x - btnOffset.x, point.y + btnOffset.y), homeBtnSize), "", deleteStyle)) {
+                    selectedGameObject.GetComponent<MouseMove2D>().UnPlace();
+                    selectedGameObject.GetComponent<TowerPlace>().Placed(false);
                     Destroy(selectedGameObject);
+                    selectedGameObject = null;
                 }
 
                 //Pick up button

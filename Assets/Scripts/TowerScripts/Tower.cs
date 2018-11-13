@@ -6,8 +6,8 @@ public class Tower : MonoBehaviour {
 
     protected float radius;
     protected float damage;
-    protected bool canPlaceOnWater = false;
-    protected bool isPlaced = false;
+    protected bool canPlaceOnWater = true;
+    protected bool isPlaced;
 
     public void Shoot() { }
     public void Turn() { }
