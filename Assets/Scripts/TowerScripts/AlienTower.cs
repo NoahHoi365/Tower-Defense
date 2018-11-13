@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienTower : Tower {
+public class AlienTower : Tower
+{
 
-	void Start () {
+    private void Awake()
+    {
+        towerCost = -1;
+    }
+
+    void Start () {
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
-        towerCost = 10;
     }
 	
 	void Update () {

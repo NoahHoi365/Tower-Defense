@@ -5,12 +5,16 @@ using UnityEngine;
 public class GodTower : Tower
 {
 
+    private void Awake()
+    {
+        towerCost = -1;
+    }
+
     void Start()
     {
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
-        towerCost = 10;
     }
 
     void Update()

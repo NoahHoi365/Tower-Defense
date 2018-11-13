@@ -7,7 +7,7 @@ public class SniperTower : Tower
 
     private void Awake()
     {
-        towerCost = 10;
+        towerCost = 150;
     }
 
     void Start()
@@ -15,7 +15,6 @@ public class SniperTower : Tower
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
-        towerCost = 150;
     }
 
     void Update()

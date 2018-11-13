@@ -31,6 +31,7 @@ public class MenuButtons : MonoBehaviour {
             if (FindObjectOfType<Player>().GetCurrency() > temp.GetComponent<Tower>().GetTowerCost()) {
                 FindObjectOfType<Player>().SubCurrency(temp.GetComponent<Tower>().GetTowerCost());
                 print(temp.GetComponent<Tower>().GetTowerCost());
+                print(temp.name);
                 temp.SetActive(true);
             } else {
                 Destroy(temp);

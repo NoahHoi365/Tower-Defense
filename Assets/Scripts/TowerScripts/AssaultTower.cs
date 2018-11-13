@@ -5,12 +5,16 @@ using UnityEngine;
 public class AssaultTower : Tower
 {
 
+    private void Awake()
+    {
+        towerCost = 100;
+    }
+
     void Start()
     {
         radius = 3f;
         damage = 10f;
         canPlaceOnWater = false;
-        towerCost = 100;
     }
 
     void Update()
