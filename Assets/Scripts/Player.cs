@@ -2,20 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player {
 
     int currency;
     int hp;
 
-    private void Start()
+    public Player(int currency, int hp)
     {
         currency = 1000;
         hp = 10;
-    }
-
-    private void Update()
-    {
-        print(currency);
     }
 
     public int GetHp()

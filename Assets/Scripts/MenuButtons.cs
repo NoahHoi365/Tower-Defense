@@ -5,9 +5,11 @@ using UnityEngine;
 public class MenuButtons : MonoBehaviour {
 
     Animator animator;
+    Player player;
     
 	void Start () {
         animator = GetComponentInParent<Animator>();
+        player = FindObjectOfType<GameManagerScript>().GetPlayer();
 	}
 
     public void OnButtonPress()
@@ -28,8 +30,8 @@ public class MenuButtons : MonoBehaviour {
             GameObject temp = Instantiate(obj);
             temp.SetActive(false);
             temp.transform.parent = null;
-            if (FindObjectOfType<Player>().GetCurrency() > temp.GetComponent<Tower>().GetTowerCost()) {
-                FindObjectOfType<Player>().SubCurrency(temp.GetComponent<Tower>().GetTowerCost());
+            if (player.GetCurrency() >= temp.GetComponent<Tower>().GetTowerCost()) {
+                player.SubCurrency(temp.GetComponent<Tower>().GetTowerCost());
                 print(temp.GetComponent<Tower>().GetTowerCost());
                 print(temp.name);
                 temp.SetActive(true);

@@ -5,6 +5,14 @@ using UnityEngine;
 public class GameManagerScript : MonoBehaviour {
 
     bool towerAttached = false;
+    Player player;
+
+    public int playerCurrency, playerHp;
+
+    private void Start()
+    {
+        player = new Player(playerCurrency, playerHp);
+    }
 
     public void TowerAttached()
     {
@@ -19,5 +27,13 @@ public class GameManagerScript : MonoBehaviour {
     public bool HasTowerAttached()
     {
         return towerAttached;
+    }
+
+    public Player GetPlayer()
+    {
+        if(player != null)
+            return this.player;
+
+        return null;
     }
 }
