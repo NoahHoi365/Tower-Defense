@@ -7,7 +7,7 @@ public class RobotTower : Tower
 
     private void Awake()
     {
-        towerCost = -1;
+        towerCost = 320;
     }
 
     void Start()

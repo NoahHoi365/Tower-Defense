@@ -7,7 +7,7 @@ public class AlienTower : Tower
 
     private void Awake()
     {
-        towerCost = -1;
+        towerCost = 700;
     }
 
     void Start () {

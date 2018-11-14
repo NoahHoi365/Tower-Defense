@@ -7,7 +7,7 @@ public class GodTower : Tower
 
     private void Awake()
     {
-        towerCost = -1;
+        towerCost = 1000;
     }
 
     void Start()

@@ -7,7 +7,7 @@ public class BoatTower : Tower
 
     private void Awake()
     {
-        towerCost = -1;
+        towerCost = 450;
     }
 
     void Start()
