@@ -10,6 +10,9 @@ public class EnemyMove : MonoBehaviour {
 
     public Transform pathHolder;
 
+    public delegate void EndOfPath();
+    public event EndOfPath endOfPathEvent;
+
     void Start()
     {
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
@@ -41,6 +44,9 @@ public class EnemyMove : MonoBehaviour {
             }
             yield return null;
         }
+
+        if (endOfPathEvent != null)
+            endOfPathEvent();
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)

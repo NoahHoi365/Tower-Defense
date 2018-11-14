@@ -9,6 +9,8 @@ public class MoneyScript : MonoBehaviour {
         
 	// Use this for initialization
 	void Start () {
+        FindObjectOfType<EnemyMove>().endOfPathEvent += EnemyHasReachedEnd;
+
         text.text = "7666";
 	}
 	
@@ -16,4 +18,9 @@ public class MoneyScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void EnemyHasReachedEnd()
+    {
+        print("Lives --");
+    }
 }
