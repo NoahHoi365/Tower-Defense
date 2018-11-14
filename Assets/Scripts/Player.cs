@@ -9,22 +9,22 @@ public class Player {
 
     public Player(int currency, int hp)
     {
-        currency = 1000;
-        hp = 10;
+        this.currency = currency;
+        this.hp = hp;
     }
 
     public int GetHp()
     {
-        return hp;
+        return this.hp;
     }
 
     public int GetCurrency()
     {
-        return currency;
+        return this.currency;
     }
 
     public void SubCurrency(int amount)
     {
-        currency -= amount;
+        this.currency -= amount;
     }
 }

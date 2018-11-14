@@ -31,8 +31,9 @@ public class GameManagerScript : MonoBehaviour {
 
     public Player GetPlayer()
     {
-        if(player != null)
-            return this.player;
+        if (player != null) {
+            return player;
+        }
 
         return null;
     }

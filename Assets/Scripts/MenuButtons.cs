@@ -9,7 +9,6 @@ public class MenuButtons : MonoBehaviour {
     
 	void Start () {
         animator = GetComponentInParent<Animator>();
-        player = FindObjectOfType<GameManagerScript>().GetPlayer();
 	}
 
     public void OnButtonPress()
@@ -25,6 +24,8 @@ public class MenuButtons : MonoBehaviour {
 
     public void OnTowerPress(GameObject obj)
     {
+        player = FindObjectOfType<GameManagerScript>().GetPlayer();
+        print(player.GetCurrency());
         bool towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
         if (!towerAttached) {
             GameObject temp = Instantiate(obj);
