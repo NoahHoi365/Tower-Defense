@@ -8,7 +8,7 @@ public class BoatTower : Tower
     private void Awake()
     {
         towerCost = 450;
-        shootCooldown = 1.8f;
+        shootCooldown = 0.9f;
     }
 
     void Start()

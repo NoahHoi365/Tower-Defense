@@ -8,7 +8,7 @@ public class GodTower : Tower
     private void Awake()
     {
         towerCost = 1000;
-        shootCooldown = 0.1f;
+        shootCooldown = 0.01f;
     }
 
     void Start()

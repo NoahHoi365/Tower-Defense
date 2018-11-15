@@ -1825,7 +1825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7321e847f26b5646a0274cab3477139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCurrency: 300
+  playerCurrency: 10000
   playerHp: 100
 --- !u!4 &674596350
 Transform:
