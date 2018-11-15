@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Player {
+﻿public class Player {
 
     int currency;
     int hp;
@@ -12,6 +8,7 @@ public class Player {
     {
         this.currency = currency;
         this.hp = hp;
+        this.wave = 1;
     }
 
     public int GetHp()
@@ -32,5 +29,15 @@ public class Player {
     public void AddCurrency(int amount)
     {
         this.currency += amount;
+    }
+
+    public int GetWave()
+    {
+        return this.wave;
+    }
+
+    public void IncreaseWave()
+    {
+        this.wave++;
     }
 }

@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     private void Start()
     {
         player = FindObjectOfType<GameManagerScript>().GetPlayer();
+        hp *= (player.GetWave() * 1.05f);
     }
 
     private void Update()

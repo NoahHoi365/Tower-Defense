@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64f508511997ff4f9cf6f8e37b67271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 25
   radius: 8
   bulletPrefab: {fileID: 1143053270821962, guid: fafe714dabfc9d64da44a12183fdf1a6,
     type: 2}

@@ -8,11 +8,15 @@ public class Bullet : MonoBehaviour {
     float speed = 20f;
     float damage;
 
+    float lifetime = 6f;
+
     private void Update()
     {
         Vector3 moveAmount = direction * speed * Time.deltaTime;
 
         transform.position += moveAmount;
+
+        Destroy(gameObject, lifetime);
     }
 
     public void Move(Vector3 dir)
