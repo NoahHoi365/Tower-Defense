@@ -8,18 +8,12 @@ public class AssaultTower : Tower
     private void Awake()
     {
         towerCost = 100;
+        shootCooldown = 0.3f;
     }
 
     void Start()
     {
-        radius = 3f;
-        damage = 10f;
         canPlaceOnWater = false;
-    }
-
-    void Update()
-    {
-
     }
 
     private void OnDrawGizmos()

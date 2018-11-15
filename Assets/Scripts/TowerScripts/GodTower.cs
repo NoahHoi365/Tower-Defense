@@ -8,18 +8,12 @@ public class GodTower : Tower
     private void Awake()
     {
         towerCost = 1000;
+        shootCooldown = 0.01f;
     }
 
     void Start()
     {
-        radius = 3f;
-        damage = 10f;
         canPlaceOnWater = false;
-    }
-
-    void Update()
-    {
-
     }
 
     private void OnDrawGizmos()

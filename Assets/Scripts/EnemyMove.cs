@@ -10,11 +10,10 @@ public class EnemyMove : MonoBehaviour {
 
     public Transform pathHolder;
 
-    public delegate void EndOfPath();
-    public event EndOfPath endOfPathEvent;
-
     void Start()
     {
+        pathHolder = GameObject.FindGameObjectWithTag("Path").transform;
+        transform.parent = null;
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
         for (int i = 0; i < waypoints.Length; i++) {
             waypoints[i] = pathHolder.GetChild(i).position;
@@ -45,8 +44,8 @@ public class EnemyMove : MonoBehaviour {
             yield return null;
         }
 
-        if (endOfPathEvent != null)
-            endOfPathEvent();
+        FindObjectOfType<MoneyScript>().EnemyHasReachedEnd();
+        Destroy(gameObject);
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)

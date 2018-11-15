@@ -9,7 +9,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public int playerCurrency, playerHp;
 
-    private void Start()
+    private void Awake()
     {
         player = new Player(playerCurrency, playerHp);
     }
@@ -31,10 +31,6 @@ public class GameManagerScript : MonoBehaviour {
 
     public Player GetPlayer()
     {
-        if (player != null) {
-            return player;
-        }
-
-        return null;
+        return player;
     }
 }

@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a86bcd832f59d540a7c5a33039fabce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1.5
+  radius: 3
+  bulletPrefab: {fileID: 1143053270821962, guid: fafe714dabfc9d64da44a12183fdf1a6,
+    type: 2}
 --- !u!114 &114854397734494046
 MonoBehaviour:
   m_ObjectHideFlags: 1

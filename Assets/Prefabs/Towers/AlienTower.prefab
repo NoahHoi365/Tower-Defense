@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 4069511339214474}
   - component: {fileID: 212192226330841766}
   - component: {fileID: 114854397734494046}
-  - component: {fileID: 114277622102558690}
   - component: {fileID: 114096352544902582}
   - component: {fileID: 65649653667760230}
+  - component: {fileID: 114277622102558690}
   m_Layer: 0
   m_Name: AlienTower
   m_TagString: Untagged
@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34998a1e9ca27a74c9f4d5548dc044e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
+  radius: 3
+  bulletPrefab: {fileID: 1143053270821962, guid: fafe714dabfc9d64da44a12183fdf1a6,
+    type: 2}
 --- !u!114 &114854397734494046
 MonoBehaviour:
   m_ObjectHideFlags: 1

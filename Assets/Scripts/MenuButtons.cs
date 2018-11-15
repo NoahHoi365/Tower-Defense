@@ -25,7 +25,6 @@ public class MenuButtons : MonoBehaviour {
     public void OnTowerPress(GameObject obj)
     {
         player = FindObjectOfType<GameManagerScript>().GetPlayer();
-        print(player.GetCurrency());
         bool towerAttached = FindObjectOfType<GameManagerScript>().HasTowerAttached();
         if (!towerAttached) {
             GameObject temp = Instantiate(obj);
@@ -33,8 +32,6 @@ public class MenuButtons : MonoBehaviour {
             temp.transform.parent = null;
             if (player.GetCurrency() >= temp.GetComponent<Tower>().GetTowerCost()) {
                 player.SubCurrency(temp.GetComponent<Tower>().GetTowerCost());
-                print(temp.GetComponent<Tower>().GetTowerCost());
-                print(temp.name);
                 temp.SetActive(true);
             } else {
                 Destroy(temp);
