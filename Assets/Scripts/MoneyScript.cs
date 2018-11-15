@@ -5,22 +5,31 @@ using TMPro;
 
 public class MoneyScript : MonoBehaviour {
 
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI moneyText;
+    Player player;
+    int currency;
+    int hp;
         
 	// Use this for initialization
 	void Start () {
         FindObjectOfType<EnemyMove>().endOfPathEvent += EnemyHasReachedEnd;
-
-        text.text = "7666";
+        player = FindObjectOfType<GameManagerScript>().GetPlayer();
+        hp = player.GetHp();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        currency = player.GetCurrency();
+        hpText.text = hp.ToString();
+        moneyText.text = currency.ToString();
+        print(currency);
+    }
 
     public void EnemyHasReachedEnd()
     {
         print("Lives --");
+        hp--;
     }
 }

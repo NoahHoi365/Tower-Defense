@@ -6,6 +6,7 @@ public class Player {
 
     int currency;
     int hp;
+    int wave;
 
     public Player(int currency, int hp)
     {

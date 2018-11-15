@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCurrency: 300
-  playerHp: 0
+  playerHp: 100
 --- !u!4 &674596350
 Transform:
   m_ObjectHideFlags: 0
@@ -1708,7 +1708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8901d25e56dd34086ddf04c2762ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1463163945}
+  hpText: {fileID: 1463163945}
+  moneyText: {fileID: 1509231529}
 --- !u!1 &805016830
 GameObject:
   m_ObjectHideFlags: 0
