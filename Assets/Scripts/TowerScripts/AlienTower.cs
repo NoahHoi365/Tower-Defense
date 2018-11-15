@@ -8,17 +8,13 @@ public class AlienTower : Tower
     private void Awake()
     {
         towerCost = 700;
+        shootCooldown = 1f;
     }
 
-    void Start () {
-        radius = 3f;
-        damage = 10f;
+    void Start()
+    {
         canPlaceOnWater = false;
     }
-	
-	void Update () {
-		
-	}
 
     private void OnDrawGizmos()
     {

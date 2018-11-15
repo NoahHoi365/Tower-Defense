@@ -45,8 +45,8 @@ public class EnemyMove : MonoBehaviour {
             yield return null;
         }
 
-        if (endOfPathEvent != null)
-            endOfPathEvent();
+        FindObjectOfType<MoneyScript>().EnemyHasReachedEnd();
+        Destroy(gameObject);
     }
 
     IEnumerator TurnToFace(Vector3 lookTarget)

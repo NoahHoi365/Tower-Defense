@@ -28,4 +28,9 @@ public class Player {
     {
         this.currency -= amount;
     }
+
+    public void AddCurrency(int amount)
+    {
+        this.currency += amount;
+    }
 }

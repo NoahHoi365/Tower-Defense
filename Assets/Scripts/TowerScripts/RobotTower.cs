@@ -8,18 +8,12 @@ public class RobotTower : Tower
     private void Awake()
     {
         towerCost = 320;
+        shootCooldown = 1f;
     }
 
     void Start()
     {
-        radius = 3f;
-        damage = 10f;
         canPlaceOnWater = false;
-    }
-
-    void Update()
-    {
-
     }
 
     private void OnDrawGizmos()

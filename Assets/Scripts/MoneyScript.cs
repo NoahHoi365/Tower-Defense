@@ -24,12 +24,10 @@ public class MoneyScript : MonoBehaviour {
         currency = player.GetCurrency();
         hpText.text = hp.ToString();
         moneyText.text = currency.ToString();
-        print(currency);
     }
 
     public void EnemyHasReachedEnd()
     {
-        print("Lives --");
         hp--;
     }
 }

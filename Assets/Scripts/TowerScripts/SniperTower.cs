@@ -8,18 +8,12 @@ public class SniperTower : Tower
     private void Awake()
     {
         towerCost = 150;
+        shootCooldown = 5f;
     }
 
     void Start()
     {
-        radius = 3f;
-        damage = 10f;
         canPlaceOnWater = false;
-    }
-
-    void Update()
-    {
-
     }
 
     private void OnDrawGizmos()

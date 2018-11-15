@@ -8,18 +8,12 @@ public class BoatTower : Tower
     private void Awake()
     {
         towerCost = 450;
+        shootCooldown = 1.8f;
     }
 
     void Start()
     {
-        radius = 3f;
-        damage = 10f;
         canPlaceOnWater = true;
-    }
-
-    void Update()
-    {
-        
     }
 
     private void OnDrawGizmos()
