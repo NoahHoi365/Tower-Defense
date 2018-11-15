@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Files uploaden:
 git add . (files)
 
@@ -17,4 +18,25 @@ Nooit naar de master branch pushen, altijd naar de develop branch...
 Mocht je een nieuwe feature toevoegen aan de game -> git branch feature/(name) <- waarvan de name de naam is van de feature...
 
 Je push je feature branch naar de develop branch als je het getest heb en als het dan allemaal werkt op de develop branch push
+=======
+Files uploaden:
+git add . (files)
+
+git commit -m "Your message"
+
+git push -u origin (branch)
+
+Nieuwe branch maken:
+git branch (name)
+
+Switchen van branch:
+git checkout (name branch)
+
+#Rules
+
+Nooit naar de master branch pushen, altijd naar de develop branch...
+Mocht je een nieuwe feature toevoegen aan de game -> git branch feature/(name) <- waarvan de name de naam is van de feature...
+
+Je push je feature branch naar de develop branch als je het getest heb en als het dan allemaal werkt op de develop branch push
+>>>>>>> 7b1677815a5194c00b8a36e944ada22d8c923c4d
 je naar de master branch.
