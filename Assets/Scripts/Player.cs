@@ -4,40 +4,53 @@
     int hp;
     int wave;
 
+    public delegate void PlayerDeath();
+    public event PlayerDeath playerDeathEvent;
+
     public Player(int currency, int hp)
     {
         this.currency = currency;
         this.hp = hp;
-        this.wave = 1;
+        wave = 1;
     }
 
     public int GetHp()
     {
-        return this.hp;
+        return hp;
+    }
+
+    public void SubHp(int amount)
+    {
+        hp -= amount;
+        if(hp >= 0) {
+            if(playerDeathEvent != null) {
+                playerDeathEvent();
+            }
+        }
     }
 
     public int GetCurrency()
     {
-        return this.currency;
+        return currency;
     }
 
     public void SubCurrency(int amount)
     {
-        this.currency -= amount;
+        currency -= amount;
     }
 
     public void AddCurrency(int amount)
     {
-        this.currency += amount;
+        currency += amount;
     }
 
     public int GetWave()
     {
-        return this.wave;
+        return wave;
     }
 
     public void IncreaseWave()
     {
-        this.wave++;
+        wave++;
     }
 }

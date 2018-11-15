@@ -14,6 +14,11 @@ public class GameManagerScript : MonoBehaviour {
         player = new Player(playerCurrency, playerHp);
     }
 
+    private void Start()
+    {
+        player.playerDeathEvent += PlayerDied;
+    }
+
     public void TowerAttached()
     {
         towerAttached = true;
@@ -32,5 +37,10 @@ public class GameManagerScript : MonoBehaviour {
     public Player GetPlayer()
     {
         return player;
+    }
+
+    public void PlayerDied()
+    {
+        FindObjectOfType<EventScript>().Menu();
     }
 }

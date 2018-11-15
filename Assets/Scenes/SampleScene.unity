@@ -1574,6 +1574,7 @@ GameObject:
   - component: {fileID: 674596349}
   - component: {fileID: 674596351}
   - component: {fileID: 674596352}
+  - component: {fileID: 674596353}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1593,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCurrency: 10000
-  playerHp: 100
+  playerHp: 1
 --- !u!4 &674596350
 Transform:
   m_ObjectHideFlags: 0
@@ -1638,6 +1639,19 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1910736018359688, guid: 505a877749f48e945bac3220583f9a1c,
     type: 2}
   spawnPosition: {fileID: 1409203858}
+--- !u!114 &674596353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 674596348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0b4cddc2794ce4c8fbfe76c501bfd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talk: {fileID: 0}
+  RobotEasterEgg: {fileID: 0}
 --- !u!1 &805016830
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EventScript : MonoBehaviour
 {
-
     public AudioSource talk;
     public GameObject RobotEasterEgg;
 

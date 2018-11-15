@@ -16,20 +16,19 @@ public class MoneyScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<GameManagerScript>().GetPlayer();
-        hp = player.GetHp();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         currency = player.GetCurrency();
-        hpText.text = hp.ToString();
+        hpText.text = player.GetHp().ToString();
         moneyText.text = currency.ToString();
         waveText.text = player.GetWave().ToString();
     }
 
     public void EnemyHasReachedEnd()
     {
-        hp--;
+        player.SubHp(1);
     }
 }
