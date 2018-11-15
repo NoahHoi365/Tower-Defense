@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCurrency: 10000
-  playerHp: 1
+  playerHp: 100
 --- !u!4 &674596350
 Transform:
   m_ObjectHideFlags: 0
