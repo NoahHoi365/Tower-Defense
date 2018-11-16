@@ -22,7 +22,7 @@
     public void SubHp(int amount)
     {
         hp -= amount;
-        if(hp >= 0) {
+        if(hp <= 0) {
             if(playerDeathEvent != null) {
                 playerDeathEvent();
             }

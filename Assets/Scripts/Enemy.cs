@@ -10,14 +10,14 @@ public class Enemy : MonoBehaviour {
     private void Start()
     {
         player = FindObjectOfType<GameManagerScript>().GetPlayer();
-        hp *= (player.GetWave() * 1.05f);
+        hp *= (player.GetWave() * 1.02f);
     }
 
     private void Update()
     {
-        if (hp <= 0) {
+        if (hp <= 0) {  
             if(player != null)
-                player.AddCurrency(10);
+                player.AddCurrency(30);
             Destroy(gameObject);
         }
     }
