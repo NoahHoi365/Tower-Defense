@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour {
     {
         if (hp <= 0) {  
             if(player != null)
-                player.AddCurrency(30);
+                player.AddCurrency(10);
             Destroy(gameObject);
         }
     }

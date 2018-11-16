@@ -8,7 +8,7 @@ public class RobotTower : Tower
     private void Awake()
     {
         towerCost = 320;
-        shootCooldown = 1f;
+        shootCooldown = 0.1f;
     }
 
     void Start()

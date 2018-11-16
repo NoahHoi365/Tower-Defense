@@ -9,12 +9,13 @@ public class WaveController : MonoBehaviour {
 
     public float startWait, spawnWait, waveWait;
 
+    public AudioSource round;
     public GameObject enemyPrefab;
     public Transform spawnPosition;
 
     Player player;
     
-    int spawnAmount = 3;
+    int spawnAmount = 5;
 
     private void Start()
     {
@@ -31,9 +32,9 @@ public class WaveController : MonoBehaviour {
                 Instantiate(enemyPrefab, spawnPosition);
                 yield return new WaitForSeconds(spawnWait);
             }
-            spawnAmount += 2;
+            spawnAmount += 3;
             yield return new WaitForSeconds(waveWait);
-
+            round.Play();
             player.IncreaseWave();
         }
     } 

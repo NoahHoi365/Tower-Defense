@@ -8,7 +8,7 @@ public class SniperTower : Tower
     private void Awake()
     {
         towerCost = 150;
-        shootCooldown = 5f;
+        shootCooldown = 3f;
     }
 
     void Start()

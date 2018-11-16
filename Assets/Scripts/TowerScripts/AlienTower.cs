@@ -8,7 +8,7 @@ public class AlienTower : Tower
     private void Awake()
     {
         towerCost = 700;
-        shootCooldown = 1f;
+        shootCooldown = 0.3f;
     }
 
     void Start()
